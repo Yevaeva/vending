@@ -1,0 +1,16 @@
+//colors
+$primaryColor: #c6957a;
+$mainColor: #864d25;
+$secondaryColor: #849f67;
+$darkColor: #47372a;
+$lightColor: #6a4834;
+$backgroundColor: #f7f7f7;
+$whiteColor: #ffffff;
+$blackColor: #000000;
+
+//dimensions
+$headerHeight: 64px;
+
+:export {
+  headerHeight:$headerHeight
+}

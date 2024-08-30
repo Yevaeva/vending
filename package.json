@@ -1,0 +1,33 @@
+{
+  "name": "vending",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "node_modules/.bin/next dev",
+    "build": "node_modules/.bin/next build",
+    "start": "node_modules/.bin/next start",
+    "lint": "node_modules/.bin/next lint"
+  },
+  "dependencies": {
+    "@ant-design/icons": "^5.4.0",
+    "@ant-design/nextjs-registry": "^1.0.1",
+    "antd": "^5.20.3",
+    "aos": "^2.3.4",
+    "next": "14.2.7",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-pro-sidebar": "^1.1.0"
+  },
+  "devDependencies": {
+    "@svgr/webpack": "^8.1.0",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.7",
+    "postcss": "^8",
+    "sass": "^1.77.8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  }
+}
