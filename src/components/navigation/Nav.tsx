@@ -33,7 +33,7 @@ const items = [
 ];
 
 
-function Nav(props) {
+function Nav() {
     const [hash, setHash] = useState('')
 
     useEffect(() => {
