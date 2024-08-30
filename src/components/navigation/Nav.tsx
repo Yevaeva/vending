@@ -65,10 +65,10 @@ function Nav() {
         //     label:<p onClick={()=>setHash('#about')}><Link href={'#about'}>About Us</Link></p>
         // },
         //
-        // {
-        //     key: "5",
-        //     label: "Contact Us",
-        // },
+        {
+            key: "/contact",
+            label:<Link href={'/contact'}>Contact Us</Link>,
+        },
 
     ];
 
