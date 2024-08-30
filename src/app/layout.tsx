@@ -40,7 +40,6 @@ export default function RootLayout({
 
     useEffect(() => {
         AOS.init();
-        console.log('init')
     },[]);
 
 

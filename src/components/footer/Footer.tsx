@@ -28,7 +28,7 @@ function FooterPage() {
                     <div>
                         <MailOutlined/>{" "}
                         <a href={`mailto:${'aromatick@gmail.com'}`}>
-                            aromaTick@gmail.com
+                            aromatick.spritz@gmail.com
                         </a>
                     </div>
                 </div>

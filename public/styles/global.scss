@@ -16,9 +16,10 @@ html {
   scroll-behavior: smooth;
 }
 
-.ant-layout{
+.ant-layout {
   overflow-x: hidden !important;
 }
+
 .ant-layout-header {
   height: 72px !important;
 
@@ -88,6 +89,20 @@ section {
 .video {
   width: 320px;
   height: 600px;
+}
+.contact-form {
+  //margin: 30px auto;
+  .ant-form{
+    margin: 0 auto 60px;
+  }
+
+}
+.contact-page{
+  display: flex;
+  gap: 20px;
+  justify-content: space-evenly;
+  margin: 30px auto;
+  flex-wrap: wrap;
 }
 
 
@@ -178,6 +193,7 @@ $breakPoints: (
 
 
     }
+
     .video {
       width: 240px;
       //height: 600px;
