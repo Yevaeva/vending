@@ -1,10 +1,24 @@
 'use client'
-import React from 'react';
-import {Button, Form, Input, InputNumber, Select} from 'antd';
+import React, {useEffect} from 'react';
+import {Button, Form, Input, message} from 'antd';
 import {send} from "@/theme/sendMail";
 import {MailOutlined, PhoneOutlined} from "@ant-design/icons";
 
 function Page() {
+    const [loading, setLoading] = React.useState(false);
+    const [messageApi, contextHolder] = message.useMessage();
+
+    const success = () => {
+       message.success({content: 'Your message has been successfully sent. Our team will be in touch with you shortly.'})
+    };
+    // useEffect(()=>{
+    //     message.success({content:'jashjashnjkasn'})
+    //     messageApi.open({
+    //         type: 'success',
+    //         duration: 10,
+    //         content: 'Your message has been successfully sent. Our team will be in touch with you shortly.',
+    //     });
+    // })
 
     const layout = {
         labelCol: {span: 8},
@@ -26,7 +40,12 @@ function Page() {
 
 
     const onFinish = (values: any) => {
+        setLoading(true)
         send(values.name, values.email, values.phone, values.message)
+        setTimeout(() => {
+            setLoading(false)
+            success()
+        },800)
     };
 
 
@@ -88,7 +107,7 @@ function Page() {
                             <Input.TextArea cols={20} rows={4}/>
                         </Form.Item>
                         <Form.Item wrapperCol={{...layout.wrapperCol, offset: 8}}>
-                            <Button type="primary" htmlType="submit">
+                            <Button type="primary" htmlType="submit" loading={loading}>
                                 Contact Us
                             </Button>
                         </Form.Item>
