@@ -70,7 +70,7 @@ function Page() {
                         validateMessages={validateMessages}
 
                     >
-                        <Form.Item name={'userName'} label="Name" rules={[{required: true}]}>
+                        <Form.Item name={'name'} label="Name" rules={[{required: true}]}>
                             <Input/>
                         </Form.Item>
                         <Form.Item name={'email'} label="Email" rules={[{type: 'email'}]}>
