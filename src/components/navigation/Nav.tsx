@@ -8,30 +8,6 @@ import localFont from "next/dist/compiled/@next/font/dist/local";
 import Image from "next/image";
 
 
-const items = [
-    {
-        key: "/",
-        label: <Link href={'/'}>Home</Link>,
-    },
-    {
-        key: "#about",
-        label: <p><Link href={'#about'}>About Us</Link></p>
-    },
-    {
-        key: "3",
-        label: "Menu",
-    },
-    {
-        key: "4",
-        label: "Gallery",
-    },
-    {
-        key: "5",
-        label: "Contact Us",
-    },
-    {key: "6", label: "Order Now"},
-];
-
 
 function Nav() {
     const [hash, setHash] = useState('')
