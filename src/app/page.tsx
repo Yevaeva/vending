@@ -9,19 +9,9 @@ export default function Home() {
                 <div className={'image-wrapper'}>
                     <Image src='/images/home/4.png' width={330} height={400} alt="logo"/>
                     <div className={'mt-10'}>
-                        <h2>Discover the world's finest perfumes at your fingertips. AromaTick brings instant elegance
-                            to your
-                            daily
-                            routine.</h2>
+                        <h2>{"Discover the world's finest perfumes at your fingertips. AromaTick brings instant elegance to your daily routine."}</h2>
                         <p>
-                            AromaTick is revolutionizing the way you experience luxury fragrances. Our state-of-the-art
-                            vending
-                            machines offer a curated selection of 10 original, high-end perfumes, each carefully chosen
-                            to
-                            suit
-                            every occasion and mood. Whether you're on the go or just looking for a quick refresh,
-                            AromaTick
-                            provides a convenient and affordable way to indulge in luxury.
+                            {"AromaTick is revolutionizing the way you experience luxury fragrances. Our state-of-the-art vending machines offer a curated selection of 10 original, high-end perfumes, each carefully chosen to suit every occasion and mood. Whether you're on the go or just looking for a quick refresh, AromaTick provides a convenient and affordable way to indulge in luxury."}
                         </p>
                     </div>
                 </div>
@@ -34,10 +24,7 @@ export default function Home() {
                     <div className={'mt-10'}>
                         <h2>Enjoy premium scents without the commitment.</h2>
                         <p>
-                            Why pay for an expensive bottle when you can enjoy the same luxurious scent at a fraction of
-                            the cost? With AromaTick, you don’t need to carry around large bottles of perfume. Instead,
-                            you can easily spritz on your favorite fragrance whenever you need it. Plus, it's a perfect
-                            way to explore new scents before committing to a full-size bottle.
+                            {"Why pay for an expensive bottle when you can enjoy the same luxurious scent at a fraction of the cost? With AromaTick, you don’t need to carry around large bottles of perfume. Instead, you can easily spritz on your favorite fragrance whenever you need it. Plus, it's a perfect way to explore new scents before committing to a full-size bottle."}
                         </p>
                     </div>
                     <Image src='/images/home/6.png' width={460} height={640} alt="logo"/>
@@ -85,8 +72,7 @@ export default function Home() {
                             <li>Select: Use our intuitive touchscreen to explore our collection of luxury perfumes.
                                 Find the scent that matches your vibe.
                             </li>
-                            <li>Spritz: Once you've made your choice, simply pay and enjoy a perfectly measured
-                                spritz of your chosen perfume.
+                            <li>{"Spritz: Once you've made your choice, simply pay and enjoy a perfectly measured spritz of your chosen perfume."}
                             </li>
                             <li>Enjoy: Bask in the refined aroma that enhances your style and leaves a lasting
                                 impression.
