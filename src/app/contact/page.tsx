@@ -4,7 +4,7 @@ import {Button, Form, Input, InputNumber, Select} from 'antd';
 import {send} from "@/theme/sendMail";
 import {MailOutlined, PhoneOutlined} from "@ant-design/icons";
 
-function Page(props) {
+function Page() {
 
     const layout = {
         labelCol: {span: 8},
