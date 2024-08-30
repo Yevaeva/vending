@@ -6,16 +6,21 @@ import {Menu} from "antd";
 import Link from "next/link";
 import localFont from "next/dist/compiled/@next/font/dist/local";
 import Image from "next/image";
-
+import {usePathname} from "next/navigation";
 
 
 function Nav() {
     const [hash, setHash] = useState('')
+    const path = usePathname()
 
     useEffect(() => {
         if (window) {
+            if (path.length > 1) {
+                setHash(path)
+            }else{
+                setHash(window?.location.hash || '/')
+            }
 
-            setHash(window?.location.hash || '/')
         }
     }, []);
 
@@ -41,10 +46,10 @@ function Nav() {
         //     label:<p onClick={()=>setHash('#about')}><Link href={'#about'}>About Us</Link></p>
         // },
         //
-        // {
-        //     key: "5",
-        //     label: "Contact Us",
-        // },
+        {
+            key: "/contact",
+            label: <p onClick={() => setHash('/contact')}><Link href={'/contact'}>Contact Us</Link></p>,
+        },
 
     ];
 
@@ -53,7 +58,7 @@ function Nav() {
             <div className="mt-1">
 
                 <div onClick={() => setHash('/')}><Link href={"/"}>
-                    <Image  src={'/images/svg/logo-no-background.svg'} alt={'Logo'}
+                    <Image src={'/images/svg/logo-no-background.svg'} alt={'Logo'}
                            width={200} height={64}/>
                 </Link></div>
 
