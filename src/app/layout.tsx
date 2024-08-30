@@ -1,9 +1,11 @@
 'use client';
 import type {Metadata} from "next";
 import {Inter} from "next/font/google";
+import "aos/dist/aos.css";
 import "./globals.css";
 import '../../public/styles/global.scss';
 import '../../public/styles/_variables.module.scss';
+import '../../public/styles/_mixins.scss';
 import '../components/footer/footer.scss';
 import withTheme from "../theme";
 import {Breadcrumb, Layout, Menu, theme} from "antd";
@@ -12,42 +14,15 @@ import {Breadcrumb, Layout, Menu, theme} from "antd";
 import Link from "next/link";
 import {AntdRegistry} from "@ant-design/nextjs-registry";
 import Image from "next/image";
-import {usePathname, useRouter} from "next/navigation";
-import {useEffect} from "react";
+import {useParams, usePathname, useRouter, useSearchParams} from "next/navigation";
+import {useEffect, useLayoutEffect} from "react";
 import AOS from 'aos';
 import FooterPage from "../components/footer/Footer";
+import {log} from "util";
+import Nav from "@/components/navigation/Nav";
 
 
 const {Header, Content} = Layout;
-
-const items = [
-    {
-        key: "/",
-        label: <Link href={'/'}>Home</Link>,
-    },
-    {
-        key: "/about" +
-            "'" +
-            "" +
-            "" +
-            "" +
-            "",
-        label: <Link href={'/about'}>About Us</Link>
-    },
-    {
-        key: "3",
-        label: "Menu",
-    },
-    {
-        key: "4",
-        label: "Gallery",
-    },
-    {
-        key: "5",
-        label: "Contact Us",
-    },
-    {key: "6", label: "Order Now"},
-];
 
 const inter = Inter({subsets: ["latin"]});
 
@@ -62,11 +37,11 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
 
-    const routerPath = usePathname()
 
     useEffect(() => {
         AOS.init();
-    });
+        console.log('init')
+    },[]);
 
 
     return (
@@ -76,22 +51,8 @@ export default function RootLayout({
             {withTheme(
                 <Layout>
                     <Header className={"sticky top-0 z-10 w-full flex items-center"}>
-                        <div className="mt-1">
 
-                            <Link href={"/"}>
-                                <Image src={'/images/svg/logo-no-background.svg'} alt={'Logo'} width={200} height={64}/>
-                                {/*<Logo />*/}
-                            </Link>
-
-                        </div>
-                        <Menu
-                            theme="light"
-                            mode="horizontal"
-                            className={"flex-1 justify-end"}
-                            defaultSelectedKeys={[routerPath]}
-                            activeKey={routerPath}
-                            items={items}
-                        />
+                       <Nav/>
                         {/*<Menu*/}
                         {/*    theme="light"*/}
                         {/*    mode="horizontal"*/}

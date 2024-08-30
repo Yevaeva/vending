@@ -1,0 +1,233 @@
+@mixin font($font-family, $font-file, $type) {
+  @font-face {
+    font-family: $font-family;
+    src: url('#{$font-file}.#{$type}') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+}
+
+$breakPoints: (
+        3 xs:
+        (
+                start: null,
+                end: '375px',
+        ),
+        xxs: (
+                start: null,
+                end: '450px',
+        ),
+        xs: (
+                start: null,
+                end: '576px',
+        ),
+        sm: (
+                start: null,
+                end: '768px',
+        ),
+        md: (
+                start: null,
+                end: '992px',
+        ),
+        xm: (
+                start: null,
+                end: '1024px',
+        ),
+        lg: (
+                start: null,
+                end: '1200px',
+        ),
+        xl: (
+                start: null,
+                end: '1365px',
+        ),
+        xxl: (
+                start: '1366px',
+                end: null,
+        )
+);
+
+@mixin media($breakpoint) {
+  $value: map-get($breakPoints, $breakpoint);
+  @if $value != null {
+    $start: map-get($value, start);
+    $end: map-get($value, end);
+
+    @if $start == null {
+      @media (max-width: $end) {
+        @content;
+      }
+    } @else if $end == null {
+      @media (min-width: $start) {
+        @content;
+      }
+    }
+  } @else {
+    @warn "Invalid breakpoint `#{$breakpoint}`.";
+  }
+}
+
+@function assetUrl($url) {
+  @return $url;
+}
+
+@mixin selectIcon() {
+  &:before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    min-width: 20px;
+    height: 20px;
+    border: 2px solid gray;
+  }
+}
+
+@mixin section {
+  background: #ffffff;
+  box-shadow: 0 0 5px #dfdfdf;
+  border-radius: 4px;
+  > h3 {
+    font-family: $mediumFont;
+    font-size: 18px;
+    color: #ffffff;
+    padding: 10px;
+    background: #171721;
+    text-align: center;
+    border-radius: 4px 4px 0 0;
+  }
+  > div {
+    padding: 24px;
+  }
+}
+
+@mixin pageContent {
+  max-width: 964px;
+  margin: 0 auto;
+  padding: 40px 24px 50px;
+  box-sizing: content-box;
+
+  h1 {
+    font-family: $mediumFont;
+    font-size: 28px;
+    color: #444444;
+    margin-bottom: 40px;
+  }
+}
+
+//dark-mode-table
+
+@mixin darkModeTable {
+  width: 100%;
+  margin-bottom: 24px;
+
+  .ant-table-thead {
+    th {
+      background: #171721 !important;
+      border-right: none !important;
+      font-size: 14px;
+      line-height: 20px;
+      color: #ffffff !important;
+      word-wrap: normal !important;
+    }
+  }
+  .ant-table-thead > tr > th:not(:last-child):not(.ant-table-selection-column):not(.ant-table-row-expand-icon-cell):not([colspan])::before,
+  :where(.css-dev-only-do-not-override-1km3mtt).ant-table-wrapper
+  .ant-table-thead
+  > tr
+  > td:not(:last-child):not(.ant-table-selection-column):not(.ant-table-row-expand-icon-cell):not([colspan])::before {
+    background-color: transparent;
+  }
+
+  .ant-table-tbody {
+    tr {
+      td {
+        border-bottom: none;
+        font-size: 12px;
+        line-height: 17px;
+        color: #444444;
+      }
+    }
+
+    background: #f5f6fa;
+  }
+
+  td.purple-link,
+  .purple-link a {
+    font-family: $mediumFont;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 17px;
+    color: #6b31f6 !important;
+    cursor: pointer;
+    margin: 0;
+    text-align: left;
+  }
+}
+
+@mixin radioGroup {
+  .ant-radio-button-wrapper {
+    width: 105px;
+
+    span:nth-child(2) {
+      display: flex;
+      justify-content: center;
+    }
+
+    &:hover {
+      color: $primaryColor;
+    }
+  }
+
+  .ant-radio-button-wrapper-checked {
+    background: #6b31f6 !important;
+    color: #ffffff !important;
+    border-color: #6b31f6 !important;
+  }
+
+  .ant-radio-button-wrapper-checked:not([class*=' ant-radio-button-wrapper-disabled']).ant-radio-button-wrapper:first-child {
+    border-right-color: #6b31f6;
+    border-color: #6b31f6;
+  }
+
+  .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled)::before {
+    background-color: #6b31f6;
+  }
+}
+
+@mixin reduceText($width) {
+  display: inline-block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: $width;
+  white-space: nowrap;
+}
+
+@mixin line-clamp($clamp) {
+  display: -webkit-box;
+  -webkit-line-clamp: $clamp;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@mixin whiteBox {
+  background-color: #fafafa;
+  border-radius: 4px;
+  padding: 24px;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.15);
+}
+
+@mixin scroll {
+  scrollbar-width: thin;
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    box-shadow: inset 4px 4px 6px rgba(42, 64, 127, 0.24), inset -4px -4px 6px rgba(255, 255, 255, 0.9);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #444444;
+  }
+}

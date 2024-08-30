@@ -1,6 +1,10 @@
 
-
-.footer{
+.footer {
   background-color: black !important;
   color: #c6957a !important;
+
+  a {
+    color: #c6957a;
+    text-decoration: underline;
+  }
 }
