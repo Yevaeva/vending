@@ -2,7 +2,7 @@
 
 import {sendMail} from "@/theme/mail";
 
-export const send = async (name,email:string,phone,message) => {
+export const send = async (name:string,email:string,phone:number,message:string) => {
 
     await sendMail({
         from: 'aromatick.spritz@gmail.com',
